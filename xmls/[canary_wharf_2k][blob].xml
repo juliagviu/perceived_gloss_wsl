@@ -1,0 +1,57 @@
+<scene version="3.0.0">
+
+  <default name="spp" value="1023"/>
+  <default name="res" value="1024"/>
+
+  <integrator type="aov">
+      <string name="aovs" value="normal:sh_normal,distance:depth,shape:shape_index"/>
+      <integrator type="path" name="color">
+          <integer name="max_depth" value="-1"/>
+      </integrator>
+
+  </integrator>
+
+  <bsdf type="principled" id="bsdf-matpreview">
+      <rgb name="base_color" value="0.5451, 0.2706, 0.0745"/>
+  </bsdf>
+
+  <sensor type="perspective">
+      <float name="fov" value="45"/>
+      <float name="near_clip" value="0.1"/>
+      <float name="far_clip" value="10000"/>
+
+      <transform name="to_world">
+        <lookat target="0.0, 0.0, 0.0" origin="0.2, 0.3, -1.2" up="0.0, 1.0, 0.0"/>
+      </transform>
+
+      <film type="hdrfilm">
+        <boolean name="banner" value="false"/>
+        <rfilter type="box"/>
+        <integer name="width" value="$res"/>
+        <integer name="height" value="$res"/>
+        <string name="component_format" value="float32"/>
+        <string name="pixel_format" value="rgb" />
+      </film>
+
+      <sampler type="independent">
+        <integer name="sample_count" value="$spp"/>
+      </sampler>
+  </sensor>
+
+  <shape type="obj">
+      <string name="filename" value="../geometries/blob.obj"/>
+      <transform name="to_world">
+        <translate x="-0.14" y="0.0" z="0.0"/>
+        <scale x="0.35" y="0.35" z="0.35"/>
+        <rotate x="1" angle="0.0"/>
+        <rotate y="1" angle="150"/>
+        <rotate z="1" angle="0.0"/>
+      </transform>
+      <ref name="bsdf" id="bsdf-matpreview" />
+  </shape>
+
+  <emitter type="envmap">
+      <string name="filename" value="../illuminations/canary_wharf_2k.hdr"/>
+  </emitter>
+
+</scene>

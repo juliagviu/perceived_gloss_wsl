@@ -1,0 +1,9 @@
+mitsuba
+matplotlib
+drjit
+tqdm
+albumentations
+opencv-python
+hsluv
+numpy
+pillow
