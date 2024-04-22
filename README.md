@@ -28,7 +28,6 @@ In **Eurographics 2024** (Oral Presentation)
 <img src='imgs/teaser.png'/>
 
 ## TL;DR Quickstart
-
 ```
 # Clone repository and enter in the folder
 git clone git@github.com:juliagviu/perceived_gloss_wsl.git
@@ -42,8 +41,14 @@ source inference_env/bin/activate
 pip install -r requirements.txt
 
 # Run inference (e.g., using our weakly-supervised model trained with S.100%+BSDF)
-python gloss_predictor/inference.py
+python gloss_predictor/inference.py s_100_bsdf
 ```
+
+## Download Dataset and Models
+You can download our test dataset from [here](https://nas-graphics.unizar.es/s/M6CD8PY4DsrNFmm).
+Also, you can download additional datasets to test our model, such as the test set B from [Serrano et al. 2021](https://mig.mpi-inf.mpg.de/) that we use to evaluate generalization.
+
+Our pretrained models are available [here](https://nas-graphics.unizar.es/s/trbfGHdrKRig6D2)
 
 ## Organization of the Code
 * `gloss_predictor`: code used to train and evaluate the gloss predictor models from the paper
@@ -54,9 +59,9 @@ python gloss_predictor/inference.py
 
 * `geometries`: files of the geometries in our synthetic dataset.
 
-* `data`: folder to place the data.
+* `data`: folder to place the datasets.
 
-* `models`: folder to place the pretrained models. Download them from [here](https://graphics.unizar.es/projects/perceived_gloss_2024/)
+* `models`: folder to place the pretrained models.
  
 
 ## Rendering dataset
