@@ -49,13 +49,12 @@ You can download our test dataset from [here](https://nas-graphics.unizar.es/s/M
 
 Also, you can download additional datasets to test our model, such as the test set B from [Serrano et al. 2021](https://mig.mpi-inf.mpg.de/) that we use to evaluate generalization.
 
-
 Our pretrained models are available [here](https://nas-graphics.unizar.es/s/trbfGHdrKRig6D2).
 
 ## Organization of the Code
 * `gloss_predictor`: code used to train and evaluate the gloss predictor models from the paper
 
-* `weak_labels_code`: code used to compute the weak labels used in the paper. Use the script `get_weak_labels.py`, you can download the images used to compute the iamge statistics here, and compute the skewness with the script `compute_statistics.py`.
+* `weak_labels_code`: code used to compute the weak labels used in the paper. Use the script `get_weak_labels.py`, you can download the images used to compute the image statistics here, and compute the skewness with the script `compute_statistics.py`.
 
 * `xmls`: xmls files used to render our analytical synthetic dataset.
 
