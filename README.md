@@ -50,12 +50,12 @@ You can download our test dataset from [here](https://nas-graphics.unizar.es/s/M
 Also, you can download additional datasets to test our model, such as the test set B from [Serrano et al. 2021](https://mig.mpi-inf.mpg.de/) that we use to evaluate generalization.
 
 
-Our pretrained models are available [here](https://nas-graphics.unizar.es/s/trbfGHdrKRig6D2)
+Our pretrained models are available [here](https://nas-graphics.unizar.es/s/trbfGHdrKRig6D2).
 
 ## Organization of the Code
 * `gloss_predictor`: code used to train and evaluate the gloss predictor models from the paper
 
-* `weak_labels_code`: code used to compute the weak labels used in the paper in the script `get_weak_labels.py`, you can download the images used to compute the iamge statistics here, and compute the skewness with the script `compute_statistics.py`.
+* `weak_labels_code`: code used to compute the weak labels used in the paper. Use the script `get_weak_labels.py`, you can download the images used to compute the iamge statistics here, and compute the skewness with the script `compute_statistics.py`.
 
 * `xmls`: xmls files used to render our analytical synthetic dataset.
 
@@ -68,7 +68,7 @@ Our pretrained models are available [here](https://nas-graphics.unizar.es/s/trbf
 
 ## Rendering dataset
 
-To render your own synthetic dataset, you can use the script `render.py`, installing the rquirements using the file `requirements_rendering.txt`:
+To render your own synthetic dataset, you can use the script `render.py`, installing the requirements with the file `requirements_rendering.txt`:
 
 ```
 pip install -r requirements_rendering.txt
@@ -80,7 +80,7 @@ Then you can run:
 python render.py -o OUTPUTNAME
 ```
 
-If everything works without errors, the images are saved in `OUTPUTNAME_renders_fixed_color`. You will also get a `OUTPUTNAME_analytic_materials_fixed_color.csv` with the logg of the parametres used during rendering for each image. You can use the scrip `exr2png.py` to get the inmages in Low Dynamic Range (LDR): 
+If everything works without errors, the images are saved in `OUTPUTNAME_renders_fixed_color`. You will also get a file `OUTPUTNAME_analytic_materials_fixed_color.csv` with the log of the parameters used during rendering for each image. You can use the script `exr2png.py` to get the images in Low Dynamic Range (LDR): 
 
 ```
 python exr2png.py -i OUTPUTNAME_renders_fixed_color/*.exr -l True -o ldr_images
